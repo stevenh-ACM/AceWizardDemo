@@ -1,0 +1,31 @@
+﻿@page
+@model AceUI.Pages.SkillLevels.IndexModel
+@{
+    ViewData["Title"] = "Skill Levels";
+    var count = 0;
+}
+
+<div class="text-center">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Cartesian Index</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var skilllevel in Model.SkillLevelList)
+            {
+                <tr>
+                    <th scope="row">@skilllevel.Id</th>
+                    <td>@skilllevel.Name</td>
+                    <td>@skilllevel.Description</td>
+                    <td>@skilllevel.CartesianIndex</td>
+                </tr>
+                { count++; }
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,31 @@
+﻿@page
+@model AceUI.Pages.Dispositions.IndexModel
+@{
+    ViewData["Title"] = "Dispositions";
+    var count = 0;
+}
+
+<div class="text-center">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var disposition in Model.DispositionList)
+            {
+                <tr>
+                    <th scope="row">@disposition.Id</th>
+                    <td>@disposition.Name</td>
+                    <td>@disposition.Description</td>
+                    <td>@disposition.Category</td>
+                </tr>
+                { count++; }
+            }
+        </tbody>
+    </table>
+</div>

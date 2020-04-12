@@ -1,0 +1,35 @@
+﻿@page
+@model AceUI.Pages.KnowledgeElements.IndexModel
+@{
+    ViewData["Title"] = "Knowledge Elements";
+    var count = 0;
+}
+
+<div class="text-center">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Cartesian Index</th>
+                <th scope="col">Semiotic Index</th>
+                <th scope="col">Etymology</th>                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var ke in Model.KnowledgeElementsList)
+            {
+                <tr>
+                    <th scope="row">@ke.Id</th>
+                    <td>@ke.Name</td>
+                    <td>@ke.Description</td>
+                    <td>@ke.CartesianIndex</td>
+                    <td>@ke.SemioticIndex</td>                    
+                    <td>@ke.Etymology</td>
+                </tr>
+                { count++; }
+            }
+        </tbody>
+    </table>
+</div>
